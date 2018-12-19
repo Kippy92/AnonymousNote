@@ -1,0 +1,28 @@
+<div>
+  <nav class="navbar" style="text-align: center;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+          <h1>
+              Anonymous Notes
+            </h1>
+      </div>
+      <div class="navbar">
+      </div>
+    </div>
+  </nav>
+    <form (submit)="create()">
+      <div class ="form-group">
+        <label for="note.msg">Note: </label>
+        <div>
+          <input type="text" name="note.msg" [(ngModel)]="note.msg" placeholder="Note">
+          <input type="submit" value="Submit" class='btn btn-success'/>
+        </div>
+      </div>
+    </form>
+  <div *ngFor="let note of notes">
+    <p> {{ note.msg }} </p>
+    <p> {{ note.updatedAt }} </p>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
